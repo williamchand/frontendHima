@@ -1,0 +1,19 @@
+{
+    "short_name": "Hima Persis",
+    "name": "Hima Persis",
+    "icons": [
+      {
+        "src": "/himapersis.ico",
+        "type": "image/x-icon",
+        "sizes": "64x64 32x32 24x24 16x16"
+      },
+      {
+        "src": "/himapersis.jpg",
+        "type": "image/jpg",
+        "sizes": "192x192"
+      }
+    ],
+    "display": "standalone",
+    "theme_color": "#111111",
+    "background_color": "#111111"
+}
