@@ -18,10 +18,9 @@ import {
 } from "./styles";
 import Logo from "../../../../images/logoHimaPersis.png";
 import Nav from "./Nav/Nav";
-import { FaSearch } from 'react-icons/fa'
+import { FaSearch } from "react-icons/fa";
 import axios from "axios";
 import { API_URL } from "../../../../utils";
-import { useHistory } from "react-router-dom";
 import Artikel from "../../HomePage/Artikel";
 
 const Header = () => {
@@ -34,19 +33,18 @@ const Header = () => {
   const [keyword, setKeyword] = useState("");
   const [query, setQuery] = useState("");
   const [msg, setMsg] = useState("");
-  const history = useHistory();
 
   useEffect(() => {
     getArtikel();
-  }, [keyword])
+  }, [keyword]);
 
   const handleToggle = () => {
-    setCollapsed(value => !value)
-  }
+    setCollapsed((value) => !value);
+  };
 
   const handleModal = () => {
-    setModal(value => !value)
-  }
+    setModal((value) => !value);
+  };
 
   const menuToggleHandler = () => {
     dispatch(uiActions.menuToggle());
@@ -58,21 +56,20 @@ const Header = () => {
 
   const getArtikel = async () => {
     try {
-      const response = await axios.get(API_URL + `/artikel?search=${keyword}`)
+      const response = await axios.get(API_URL + `/artikel?search=${keyword}`);
       setArtikel(response.data);
     } catch (error) {
       if (error.response) {
-        setMsg(error.response.data.msg)
+        setMsg(error.response.data.msg);
       }
     }
-  }
+  };
 
   const search = (e) => {
     e.preventDefault();
     setKeyword(query);
     setQuery("");
-    // history.push('/artikel');
-  }
+  };
 
   return (
     <>
@@ -84,7 +81,7 @@ const Header = () => {
               <SLogo src={Logo} />
             </SLogoLink>
           </Sleft>
-          <SCenter >
+          <SCenter>
             <SCTAButton>
               <Nav />
             </SCTAButton>
@@ -93,23 +90,45 @@ const Header = () => {
             </SMenuToggleButton>
           </SCenter>
           <SRight>
-            <div className={`dropdown ${(collapsed ? "" : "is-active is-right")}`} onBlur={() => handleToggle()}>
+            <div
+              className={`dropdown ${collapsed ? "" : "is-active is-right"}`}
+              onBlur={() => handleToggle()}
+            >
               <div className="dropdown-trigger">
-                <FaSearch className="icon is-normal" aria-haspopup="true" aria-controls="dropdown-menu4" onClick={() => handleToggle()} />
+                <FaSearch
+                  className="icon is-normal"
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu4"
+                  onClick={() => handleToggle()}
+                />
               </div>
               <div className="dropdown-menu" id="dropdown-menu4" role="menu">
-                <div className="dropdown-content" style={{
-                  marginTop: '13px',
-                  width: '100%'
-                }}>
-                  <div className="dropdown-item" >
+                <div
+                  className="dropdown-content"
+                  style={{
+                    marginTop: "13px",
+                    width: "100%",
+                  }}
+                >
+                  <div className="dropdown-item">
                     <form onSubmit={search}>
                       <div className="field has-addons">
                         <div className="control">
-                          <input className="input" type="text" placeholder="Cari Disini ..." style={{ width: '300px' }} value={query} onChange={(e) => setQuery(e.target.value)} />
+                          <input
+                            className="input"
+                            type="text"
+                            placeholder="Cari Disini ..."
+                            style={{ width: "300px" }}
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                          />
                         </div>
                         <div className="control">
-                          <button className="button" type="submit" onClick={() => handleModal()}>
+                          <button
+                            className="button"
+                            type="submit"
+                            onClick={() => handleModal()}
+                          >
                             <FaSearch />
                           </button>
                         </div>
@@ -125,20 +144,22 @@ const Header = () => {
       <SMenu style={menuOpen ? { left: 0, zIndex: 1 } : {}}>
         <Nav menuToggleHandler={menuToggleHandler} />
       </SMenu>
-      <div className={`modal ${(modal ? "" : "is-active")}`} onClick={() => handleModal()}>
+      <div
+        className={`modal ${modal ? "" : "is-active"}`}
+        onClick={() => handleModal()}
+      >
         <div className="modal-background"></div>
         <div className="modal-card">
           <header className="modal-card-head">
-            <p className="modal-card-title">
-              Hasil Pencarian ...
-            </p>
+            <p className="modal-card-title">Hasil Pencarian ...</p>
             <button className="delete" aria-label="close"></button>
           </header>
           <section className="modal-card-body">
-            {msg ?
+            {msg ? (
               <h1 className="notification is-danger is-light">{msg}</h1>
-              : <Artikel data={artikel} />
-            }
+            ) : (
+              <Artikel data={artikel} />
+            )}
           </section>
         </div>
       </div>

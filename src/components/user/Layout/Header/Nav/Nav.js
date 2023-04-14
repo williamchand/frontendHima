@@ -10,7 +10,6 @@ import {
   SNavLink,
   SNavLinkContainer,
 } from "./styles";
-import { API_URL } from "../../../../../utils";
 
 const Nav = ({ navLinks, menuToggleHandler }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -50,7 +49,15 @@ const Nav = ({ navLinks, menuToggleHandler }) => {
           </SNavLinkContainer>
         );
       })}
-      <Btn className="button is-success is-rounded is-outlined" to="/anggotaBaru" onClick={onSelectCallback}>Gabung HimaPersis</Btn>
+      <div style={{ paddingLeft: "2rem" }}>
+        <Btn
+          className="button is-success is-rounded is-outlined"
+          to="/anggotaBaru"
+          onClick={onSelectCallback}
+        >
+          Gabung HimaPersis
+        </Btn>
+      </div>
     </SNav>
   );
 };
@@ -118,19 +125,26 @@ Nav.defaultProps = {
           link: "/berita",
           branches: null,
         },
+        {
+          label: "publikasi opini",
+          link: "/opini",
+          branches: null,
+        },
       ],
     },
-    {
-      label: "administrasi",
-      link: null,
-      tree: [
-        {
-          label: "surat",
-          link: "/surat",
-          branches: null
-        }
-      ]
-    }
+    // ,
+    // {
+
+    //   label: "administrasi",
+    //   link: null,
+    //   tree: [
+    //     {
+    //       label: "surat",
+    //       link: "/surat",
+    //       branches: null,
+    //     },
+    //   ],
+    // },
   ],
 };
 export default Nav;

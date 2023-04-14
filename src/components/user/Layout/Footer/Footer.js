@@ -2,18 +2,18 @@ import React from "react";
 import Logo from "../../../../images/logoHimaPersis.png";
 import { Link } from "react-router-dom";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
-import Youtube from '../../../../images/YouTube-Icon-Full-Color-Logo.wine.png';
-import Tiktok from '../../../../images/Social-media_Tiktok-512.webp';
-import Facebook from '../../../../images/circle-facebook_-512.webp';
-import Twitter from '../../../../images/free-twitter-logo-icon-2429-thumb.png';
-import Instagram from '../../../../images/instagram-1581266_640-transformed.png'
+import Youtube from "../../../../images/YouTube-Icon-Full-Color-Logo.wine.png";
+import Tiktok from "../../../../images/Social-media_Tiktok-512.webp";
+import Facebook from "../../../../images/circle-facebook_-512.webp";
+import Twitter from "../../../../images/free-twitter-logo-icon-2429-thumb.png";
+import Instagram from "../../../../images/instagram-1581266_640-transformed.png";
 
 const Footer = () => {
   const ig = "instagram.com/pphimapersis.official";
   const fb = "www.facebook.com/himapersisID/";
   const yt = "youtube.com/channel/UCbPOziblvvcffpbO5z1uqVQ";
   const tw = "twitter.com/himapersis/";
-  const tt = "tiktok.com/@pphimapersis.official"
+  const tt = "tiktok.com/@pphimapersis.official";
 
   // const tiktok = '../../../../images/Social-media_Tiktok-512.webp';
   return (
@@ -35,7 +35,10 @@ const Footer = () => {
               <div className="columns is-mobile has-text-centered">
                 <div className="column"></div>
                 <div className="column"></div>
-                <div className="column m-1 p-1" style={{ backgroundColor: `rgba(255,255,255,0.1)` }}>
+                <div
+                  className="column m-1 p-1"
+                  style={{ backgroundColor: `rgba(255,255,255,0.1)` }}
+                >
                   <Link
                     to={{ pathname: `https://${ig}` }}
                     className="icon is-medium m-1"
@@ -44,7 +47,10 @@ const Footer = () => {
                     <img src={Instagram} alt="instagram" />
                   </Link>
                 </div>
-                <div className="column p-1 m-1" style={{ backgroundColor: `rgba(255,255,255,0.1)` }}>
+                <div
+                  className="column p-1 m-1"
+                  style={{ backgroundColor: `rgba(255,255,255,0.1)` }}
+                >
                   <Link
                     to={{ pathname: `https://${tw}` }}
                     className="icon is-medium m-1"
@@ -53,7 +59,10 @@ const Footer = () => {
                     <img src={Twitter} alt="twitter" />
                   </Link>
                 </div>
-                <div className="column p-1 m-1" style={{ backgroundColor: `rgba(255,255,255,0.1)` }}>
+                <div
+                  className="column p-1 m-1"
+                  style={{ backgroundColor: `rgba(255,255,255,0.1)` }}
+                >
                   <Link
                     to={{ pathname: `https://${yt}` }}
                     className="icon is-medium m-1"
@@ -62,7 +71,10 @@ const Footer = () => {
                     <img src={Youtube} alt="youtube" />
                   </Link>
                 </div>
-                <div className="column p-1 m-1" style={{ backgroundColor: `rgba(255,255,255,0.1)` }}>
+                <div
+                  className="column p-1 m-1"
+                  style={{ backgroundColor: `rgba(255,255,255,0.1)` }}
+                >
                   <Link
                     to={{ pathname: `https://${fb}` }}
                     className="icon is-medium m-1"
@@ -71,7 +83,10 @@ const Footer = () => {
                     <img alt="facebook" src={Facebook} />
                   </Link>
                 </div>
-                <div className="column p-1 m-1" style={{ backgroundColor: `rgba(255,255,255,0.1)` }}>
+                <div
+                  className="column p-1 m-1"
+                  style={{ backgroundColor: `rgba(255,255,255,0.1)` }}
+                >
                   <Link
                     to={{ pathname: `https://${tt}` }}
                     className="icon is-medium m-1"
@@ -88,7 +103,10 @@ const Footer = () => {
                   <p>Alamat</p>
                 </div>
                 <div className="column  is-full">
-                  <p>: Jl. Bambu Apus 1 No 1 Cipayung Jakarta Timur DKI Jakarta 10560 </p>
+                  <p>
+                    : Jl. Bambu Apus 1 No 1 Cipayung Jakarta Timur DKI Jakarta
+                    10560{" "}
+                  </p>
                 </div>
               </div>
               <div className="columns is-mobile has-text-white m-0">
@@ -121,11 +139,11 @@ const Footer = () => {
                       Video
                     </Link>
                   </div>
-                  <div>
+                  {/* <div>
                     <Link to={"/twibbone"} className="has-text-white">
                       Twibbone
                     </Link>
-                  </div>
+                  </div> */}
                   <div>
                     <Link to={"/infografis"} className="has-text-white">
                       Infografis
@@ -150,16 +168,16 @@ const Footer = () => {
                     </Link>
                   </p>
                 </div>
-                <div className="column m-1">
+                {/* <div className="column m-1">
                   <div className="has-text-white">
                     ADMINISTRASI
                     <div>
-                      <Link to="/sejarah" className="  has-text-white">
+                      <Link to="/surat" className="  has-text-white">
                         Surat
                       </Link>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
@@ -174,7 +192,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div >
+      </div>
     </>
   );
 };

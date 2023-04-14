@@ -6,7 +6,7 @@ import {
   SNavLabelContainer,
   SNavLink,
 } from "../styles";
-import { Hr, SDropdown, STreeChild, STreeItem } from "./styles";
+import { SDropdown, STreeChild, STreeItem } from "./styles";
 
 const TreeItem = ({ onSelectCallback, label, children, link }) => {
   const [isOpen, setIsOpen] = useState(false);

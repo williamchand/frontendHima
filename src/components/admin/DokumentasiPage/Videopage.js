@@ -3,8 +3,7 @@ import axios from "axios";
 import jwt_decode from "jwt-decode";
 import { API_URL } from "../../../utils";
 import { Link, useHistory, useParams } from "react-router-dom";
-import { IoMdAdd } from "react-icons/io";
-import { AiOutlineArrowLeft } from 'react-icons/ai';
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
 import { Player } from "video-react";
 
@@ -71,7 +70,10 @@ const VideoPage = () => {
   return (
     <>
       <div className="container mt-5 mb-5 is-relative">
-        <Link className="button is-small mr-3 is-primary mb-3" to="/adminAlbumVideo">
+        <Link
+          className="button is-small mr-3 is-primary mb-3"
+          to="/adminAlbumVideo"
+        >
           <span className="icon">
             <AiOutlineArrowLeft />
           </span>

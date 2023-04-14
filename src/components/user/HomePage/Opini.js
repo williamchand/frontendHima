@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, Route, useRouteMatch } from "react-router-dom";
-import DetailArtikel from "../ELibraryPage/DetailArtikel";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import moment from "moment/moment";
+import DetailOpini from "../ELibraryPage/DetailOpini";
 
-export default function Artikel(props) {
+export default function Opini(props) {
   let { path } = useRouteMatch();
   const { data } = props;
   const [currentItems, setCurrentItems] = useState([]);
@@ -27,12 +27,11 @@ export default function Artikel(props) {
   return (
     <>
       <div className="m-1">
-        {currentItems.map((artikel) => {
+        {currentItems.map((opini) => {
           return (
             <Link
-              className=""
-              key={artikel.id}
-              to={`berita/${artikel.id}/${artikel.judul.replaceAll(" ", "-")}`}
+              key={opini.id}
+              to={`opini/${opini.id}/${opini.judul.replaceAll(" ", "-")}`}
             >
               <hr />
               <article className="media box">
@@ -40,18 +39,18 @@ export default function Artikel(props) {
                   <div className="field">
                     <p className="has-text-left">
                       <strong className="is-size-7-mobile">
-                        {artikel.judul}
+                        {opini.judul}
                       </strong>
                       <br />
                       <small className="is-size-7-mobile">
-                        {moment(artikel.createdAt).format("D MMMM YYYY")}
+                        {moment(opini.createdAt).format("D MMMM YYYY")}
                       </small>
                     </p>
                   </div>
                 </div>
                 <figure className="media-right">
                   <img
-                    src={artikel.url}
+                    src={opini.url}
                     className="image is-96x96"
                     style={{
                       borderRadius: "10%",
@@ -65,7 +64,7 @@ export default function Artikel(props) {
       </div>
       <div className="is-flex is-align-items-center is-justify-content-center mt-6">
         <Link
-          to={"/berita"}
+          to={"/opini"}
           className="button is-normal is-rounded is-info is-centered"
         >
           lihat Lebih banyak
@@ -76,7 +75,7 @@ export default function Artikel(props) {
         </Link>
       </div>
       <Route path={`${path}/:id/:judul`}>
-        <DetailArtikel />
+        <DetailOpini />
       </Route>
     </>
   );

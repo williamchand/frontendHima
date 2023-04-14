@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import ReactPaginate from "react-paginate";
+import React, { useState, useEffect } from "react";
 import { Link, Route, useRouteMatch } from "react-router-dom";
-import DetailArtikel from "./DetailArtikel";
+import DetailOpini from "./DetailOpini";
+import ReactPaginate from "react-paginate";
 
-export default function Artikel(props) {
+export default function Opini(props) {
   let { path } = useRouteMatch();
   const { data } = props;
   const [currentItems, setCurrentItems] = useState([]);
@@ -25,14 +25,14 @@ export default function Artikel(props) {
   return (
     <>
       <div className="columns is-1-mobile is-multiline mt-5 mb-5">
-        {currentItems.map((artikel) => {
+        {currentItems.map((opini) => {
           return (
-            <div className="column is-one-quarter" key={artikel.id}>
+            <div className="column is-one-quarter" key={opini.id}>
               <div className="card">
                 <div className="card-image">
                   <figure className="image is-3by2">
                     <img
-                      src={artikel.url}
+                      src={opini.url}
                       alt="image"
                       style={{ width: "100%", height: "100%" }}
                     />
@@ -40,13 +40,13 @@ export default function Artikel(props) {
                 </div>
                 <div className="card-header" style={{ height: "100px" }}>
                   <Link
-                    to={`berita/${artikel.id}/${artikel.judul.replaceAll(
-                      " ",
-                      "-"
-                    )}`}
+                    className="card-header-title has-text-left"
+                    to={`opini/${opini.id}/${opini.judul.replaceAll(" ", "-")}`}
                   >
-                    <p className="card-header-title has-text-left">
-                      <h6>{artikel.judul}</h6>
+                    <p className="card-header-title">
+                      <h6 className="is-size-6-mobile is-size-7 has-text-justify">
+                        {opini.judul}
+                      </h6>
                     </p>
                   </Link>
                 </div>
@@ -54,15 +54,15 @@ export default function Artikel(props) {
             </div>
           );
         })}
-        <Route path={`${path}/:id/:judul`}>
-          <DetailArtikel />
-        </Route>
       </div>
+      <Route path={`${path}:/id/:judul`}>
+        <DetailOpini />
+      </Route>
       <ReactPaginate
         breakLabel="..."
         nextLabel="next"
         onPageChange={handlePageClick}
-        pageRangeDisplayed={3}
+        pageRangeDisplayed={2}
         pageCount={pageCount}
         previousLabel="previous"
         renderOnZeroPageCount={null}
@@ -71,7 +71,6 @@ export default function Artikel(props) {
         nextLinkClassName="pagination-next"
         pageLinkClassName="pagination-link"
         activeLinkClassName="is-current"
-        // className="pagination-list"
       />
     </>
   );
