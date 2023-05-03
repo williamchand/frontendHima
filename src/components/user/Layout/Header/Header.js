@@ -60,7 +60,7 @@ const Header = () => {
       setArtikel(response.data);
     } catch (error) {
       if (error.response) {
-        setMsg(error.response.data.msg);
+        // setMsg(error.response.data.msg);
       }
     }
   };
@@ -73,7 +73,7 @@ const Header = () => {
 
   return (
     <>
-      <SHeaderHeight />
+      {/* <SHeaderHeight /> */}
       <SHeaderFixed>
         <SHeader>
           <Sleft>

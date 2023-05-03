@@ -18,7 +18,7 @@ const Footer = () => {
   // const tiktok = '../../../../images/Social-media_Tiktok-512.webp';
   return (
     <>
-      <div className="container is-fullhd">
+      <div>
         <div
           className="has-text-white"
           style={{ background: `rgba(173,47,29,0.6)` }}
@@ -27,8 +27,8 @@ const Footer = () => {
             <div className="column">
               <div className="columns">
                 <div className="column">
-                  <figure className="image is-128x128-mobile">
-                    <img src={Logo} alt="logo" style={{ width: "100%" }} />
+                  <figure className="image is-128x128-mobile is-flex is-justify-content-center">
+                    <img src={Logo} alt="logo" style={{ width: "50%" }} />
                   </figure>
                 </div>
               </div>

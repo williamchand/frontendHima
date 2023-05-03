@@ -21,23 +21,25 @@ export const SHeaderHeight = styled.div`
 `;
 
 export const SHeaderFixed = styled.div`
-  position: fixed;
+  // position: fixed;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   left: 0;
   right: 0;
   top: 0;
-  height: ${v.headerHeight};
-  background: ${({ theme }) => theme.primary2};
+  height: 100%; 
+  // height: ${v.headerHeight};
+  // background: ${({ theme }) => theme.primary2};
   z-index: 10;
 `;
 
 export const SHeader = styled.header`
   margin: 0 auto;
-  height: 100%;
-  width: 100%;
-  max-width: 1920px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // height: 100%;
+  // width: 100%;
+  // max-width: 1920px;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
   transition: 0.3s ease padding;
   padding: 0 ${v.mdSpacing};
 
@@ -52,7 +54,7 @@ export const SHeader = styled.header`
 `;
 
 export const Sleft = styled.div`
-  position: absolute;
+  // position: absolute;
   @media ${b.sm}{
     position: initial;
   }
@@ -73,8 +75,8 @@ export const SRight = styled.div`
 `;
 
 export const SLogoLink = styled(Link)`
-  width: 50vw;
-  display: flex;
+  // width: 50vw;
+  // display: flex;
 
   @media ${b.sm} {
     width: 40vh;
@@ -83,9 +85,12 @@ export const SLogoLink = styled(Link)`
 `;
 
 export const SLogo = styled.img`
-  display: block;
-  height: 100%;
-  width: 100%;
+  // display: block;
+  height: 80%;
+  width: 80%;
+  margin: 0px auto;
+  // background: red;
+  display: flex;
   filter: contrast(200%);
 `;
 

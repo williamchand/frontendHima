@@ -6,9 +6,20 @@ import { SPage } from "./styles";
 const Layout = ({ children }) => {
   return (
     <>
-      <Header />
-      <SPage>{children}</SPage>
-      <Footer />
+      <div className="columns" style={{
+        height:'100vh',
+        // width:'200vh'
+      }}>
+        <div className="column is-one-fifth-desktop">
+          <Header />
+        </div>  
+        <div className="column " style={{
+          overflowY:'auto'
+        }}>
+          <SPage>{children}</SPage>
+          <Footer/>
+        </div>
+      </div>
     </>
   );
 };

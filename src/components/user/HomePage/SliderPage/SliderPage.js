@@ -57,10 +57,56 @@ const SliderPage = () => {
     setSlideIndex(index);
   };
 
+  const nyoba = [
+    {
+      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
+      judul: "ajay"
+    },
+    {
+      url: "https://sinkap.info/wp-content/uploads/2022/04/82684877-b25f-4f47-8f98-b003a68c82da.jpg",
+      judul: "ajay"
+    },
+    {
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      judul: "ajay"
+    },
+    {
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      judul: "ajay"
+    },
+    {
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      judul: "ajay"
+    },
+    {
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      judul: "ajay"
+    },
+    {
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      judul: "ajay"
+    },
+    {
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      judul: "ajay"
+    },
+    {
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      judul: "ajay"
+    },
+    {
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      judul: "ajay"
+    },
+    {
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      judul: "ajay"
+    }
+  ]
   return (
     <>
       <div className="container-slider">
-        {dataSlider.map((obj, index) => {
+        {nyoba.map((obj, index) => {
           return (
             <div
               key={index}
@@ -70,12 +116,12 @@ const SliderPage = () => {
             >
               <img src={obj.url} alt="slideimage" />
               <div className="slide-content">
-                <Link
+                {/* <Link
                   to={`berita/${dataSlider[slideIndex - 1].id}/${dataSlider[slideIndex - 1].judul
                     }`}
                 >
                   <h1>{obj.judul}</h1>
-                </Link>
+                </Link> */}
               </div>
             </div>
           );

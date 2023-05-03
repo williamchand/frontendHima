@@ -49,9 +49,9 @@ const Nav = ({ navLinks, menuToggleHandler }) => {
           </SNavLinkContainer>
         );
       })}
-      <div style={{ paddingLeft: "2rem" }}>
+      <div>
         <Btn
-          className="button is-success is-rounded is-outlined"
+          className="button is-success is-rounded is-outlined mt-5"
           to="/anggotaBaru"
           onClick={onSelectCallback}
         >

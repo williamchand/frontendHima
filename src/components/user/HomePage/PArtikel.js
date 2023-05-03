@@ -17,6 +17,7 @@ const PArtikel = () => {
     const response = await axios.get(API_URL + `/artikel`);
     setArtikels(response.data);
   };
+  
   return (
     <div className="hero is-fullwidth">
       <div className="hero-body">

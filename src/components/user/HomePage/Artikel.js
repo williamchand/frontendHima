@@ -23,11 +23,47 @@ export default function Artikel(props) {
     const newOffset = (event.selected * itemsPerPage) % data.length;
     setItemOffset(newOffset);
   };
-
+const nyoba = [
+    {
+      id: 1,
+      judul: "Persis Hima judul akjsdbaiusasdasdasdad",
+      createdAt: "12-12-2022",
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
+    },
+    {
+      id: 1,
+      judul: "Persis Hima judul 2",
+      createdAt: "12-12-2022",
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
+    },
+    {
+      id: 1,
+      judul: "Persis Hima judul 3",
+      createdAt: "12-12-2022",
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
+    },
+    {
+      id: 1,
+      judul: "Persis Hima judul 4",
+      createdAt: "12-12-2022",
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
+    },
+    {
+      id: 1,
+      judul: "Persis Hima judul 5",
+      createdAt: "12-12-2022",
+      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
+    }
+  ]
   return (
     <>
       <div className="m-1">
-        {currentItems.map((artikel) => {
+        {nyoba.map((artikel) => {
           return (
             <Link
               className=""

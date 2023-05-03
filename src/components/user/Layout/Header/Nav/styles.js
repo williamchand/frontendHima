@@ -4,13 +4,14 @@ import { IoIosArrowDown } from "react-icons/io";
 import { v, b, a } from "../../../../../styles/variables";
 
 export const SNav = styled.nav`
-  width: auto;
+  // width: 100%;
   padding: ${v.mdSpacing};
-  background: ${({ theme }) => theme.bg};
+  // background: ${({ theme }) => theme.bg};
   border-radius: ${v.borderRadius};
   z-index: 999;
   background: none;
   display: flex;
+  flex-direction: column;
 
   @media screen and (max-width: 978px) {
     display: block;
@@ -19,7 +20,9 @@ export const SNav = styled.nav`
 
 export const SNavLinkContainer = styled.div`
   user-select: none;
-  position: relative;
+  // position: relative;
+  margin-left: 10px;
+  margin-top:30px;
   width: 100%;
   justify-content: space-between;
 
