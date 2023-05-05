@@ -33,6 +33,29 @@ const PublikasiJurnal = () => {
     })
   }
 
+  const coba = [
+    {
+      id: 1,
+      judul: 'jurnal1'
+    },
+    {
+      id: 2,
+      judul: 'jurnal2'
+    },
+    {
+      id: 3,
+      judul: 'jurnal3'
+    },
+    {
+      id: 4,
+      judul: 'jurnal4'
+    },
+    {
+      id: 5,
+      judul: 'jurnal5'
+    }
+  ]
+
   return (
     <div className="container">
       <div className="has-text-centered mt-5">
@@ -40,7 +63,7 @@ const PublikasiJurnal = () => {
         <h6 className="is-size-7">Himpunan Mahasiswa Persatuan Islam</h6>
       </div>
       <div className="columns is-multiline mt-5 mb-5">
-        {jurnals.map((jurnal) => (
+        {coba.slice(0,4).map((jurnal) => (
           <div className="column is-one-quarter" key={jurnal.id}>
             <div className="card">
               <div className="card-content">

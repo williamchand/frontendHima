@@ -22,9 +22,11 @@ export const SHeaderHeight = styled.div`
 
 export const SHeaderFixed = styled.div`
   // position: fixed;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  // width: 100%;
+  // box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
   left: 0;
   right: 0;
+  bottom:0;
   top: 0;
   height: 100%; 
   // height: ${v.headerHeight};

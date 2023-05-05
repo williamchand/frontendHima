@@ -16,7 +16,15 @@ const Foto = () => {
     setFotos(response.data);
   };
   return (
-    <div className="container">
+    <div className="p-6">
+      <div
+        className="has-text-left"
+        style={{ borderLeft: "6px solid red" }}
+      >
+        <p className="is-size-6 pl-2 has-text-weight-bold">
+          Dokumentasi Foto
+        </p>
+      </div>
       <div className="has-text-centered mt-5">
         <h2 className="is-size-3">Dokumentasi Foto</h2>
         <h6 className="is-size-7">Himpunan Mahasiswa Persatuan Islam</h6>

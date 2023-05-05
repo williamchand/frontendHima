@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { v, b, a } from "../../../../../styles/variables";
 
 export const SNav = styled.nav`
-  // width: 100%;
+  width: 100%;
   padding: ${v.mdSpacing};
   // background: ${({ theme }) => theme.bg};
   border-radius: ${v.borderRadius};

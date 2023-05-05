@@ -62,16 +62,16 @@ const nyoba = [
   ]
   return (
     <>
-      <div className="m-1">
-        {nyoba.map((artikel) => {
+      <div className="m-1 columns is-6">
+        {nyoba.slice(0,3).map((artikel) => {
           return (
             <Link
-              className=""
+              className="column"
               key={artikel.id}
               to={`berita/${artikel.id}/${artikel.judul.replaceAll(" ", "-")}`}
             >
               <hr />
-              <article className="media box">
+              {/* <article className="media box">
                 <div className="media-content">
                   <div className="field">
                     <p className="has-text-left">
@@ -94,7 +94,35 @@ const nyoba = [
                     }}
                   />
                 </figure>
-              </article>
+              </article> */}
+              <div class="column card">
+                <div class="card-image">
+                  <figure class="image is-4by3">
+                    <img src={artikel.url} alt="Placeholder image"/>
+                  </figure>
+                </div>
+                <div class="card-content">
+                  <div class="media">
+                    <div class="media-content">
+                      <p class="title is-4">{
+                        (artikel.judul.length > 24) ?
+                          `${artikel.judul.slice(0,25)}...` :
+                          artikel.judul
+                      }</p>
+                    </div>
+                  </div>
+
+                  <div class="content">
+                    {
+                      (artikel.description.length > 120) ?
+                      `${artikel.description.slice(0,120)}...` :
+                      artikel.description
+                    }
+                    <br/>
+                    <time>{moment(artikel.createdAt).format("D MMMM YYYY")}</time>
+                  </div>
+                </div>
+              </div>
             </Link>
           );
         })}

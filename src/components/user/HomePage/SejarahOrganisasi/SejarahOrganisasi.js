@@ -3,8 +3,19 @@ import Img from "../../../../images/logo_hima_persis.png";
 
 const SejarahOrganisasi = () => {
   return (
-    <div className="m-5">
-      <figure className="image is-16by9 is-640x360">
+    <div className="p-6">
+      <div
+        className="has-text-left"
+        style={{ borderLeft: "6px solid red" }}
+      >
+        <p className="is-size-6 pl-2 has-text-weight-bold">
+          Sejarah Hima Persis
+        </p>
+      </div>
+      {/* <figure className="image is-16by9 is-640x360"> */}
+      <figure className="image is-flex mx-auto" style={{
+        width:'10%'
+      }}>
         <img src={Img} alt="image" />
       </figure>
       <h1 className="my-4 is-uppercase has-text-centered is-size-4">
