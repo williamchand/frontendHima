@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Dropdown from "./Dropdown/Dropdown";
 import {
   Btn,
@@ -10,6 +12,16 @@ import {
   SNavLink,
   SNavLinkContainer,
 } from "./styles";
+
+const Butt = styled.button`
+  background: black;
+  color: white;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateX(10px);
+  }
+`;
 
 const Nav = ({ navLinks, menuToggleHandler }) => {
   const [openDropdown, setOpenDropdown] = useState(null);
@@ -25,38 +37,30 @@ const Nav = ({ navLinks, menuToggleHandler }) => {
   };
 
   return (
-    <SNav>
+    <SNav className="mt-4">
+      {/* anjayuyyyyyyyyyyyyyyyyyyyhbhjvhvhjgasndasjkd */}
       {navLinks.map(({ label, link, tree }, index) => {
         const isOpen = openDropdown === label;
         return (
-          <SNavLinkContainer key={index}>
+          <SNavLinkContainer key={index} >
             {link && (
               <SNavLink to={link} onClick={onSelectCallback}>
-                {label}
+                {label[0].toUpperCase()+label.slice(1)}
               </SNavLink>
-            )}
-            {!link && (
-              <SNavLabelContainer onClick={() => openDropdownHandler(label)}>
-                <SNavLabel isOpen={isOpen}>{label}</SNavLabel>
-                <SArrowContainer isOpen={isOpen}>
-                  <SArrowIcon />
-                </SArrowContainer>
-              </SNavLabelContainer>
-            )}
-            {isOpen && (
-              <Dropdown tree={tree} onSelectCallback={onSelectCallback} />
             )}
           </SNavLinkContainer>
         );
       })}
-      <div>
-        <Btn
-          className="button is-success is-rounded is-outlined mt-5"
-          to="/anggotaBaru"
+      <div className="mt-auto">
+        <Link to="/anggotabaru">
+        <Butt
+          className="button mt-5"
+          style={{borderRadius:'0px'}}
           onClick={onSelectCallback}
         >
           Gabung HimaPersis
-        </Btn>
+        </Butt>
+        </Link>
       </div>
     </SNav>
   );
@@ -75,76 +79,25 @@ Nav.defaultProps = {
       tree: null,
     },
     {
-      label: "galleri",
-      link: null,
-      tree: [
-        {
-          label: "dokumentasi organisasi",
-          link: null,
-          branches: [
-            {
-              label: "foto",
-              link: "/foto",
-              branches: null,
-            },
-            {
-              label: "video",
-              link: "/video",
-              branches: null,
-            },
-          ],
-        },
-        // {
-        //   label: "twibbone",
-        //   link: "/twibbone",
-        //   branches: null,
-        // },
-        {
-          label: "infografis",
-          link: "/infografis",
-          branches: null,
-        },
-      ],
+      label: "foto",
+      link: "/foto",
+      tree: null,
+    },
+    {
+      label: "video",
+      link: "/video",
+      tree: null,
+    },
+    {
+      label: "infografis",
+      link: "/infografis",
+      branches: null,
     },
     {
       label: "publikasi",
-      link: null,
-      tree: [
-        {
-          label: "publikasi buku",
-          link: "/buku",
-          branches: null,
-        },
-        {
-          label: "publikasi jurnal",
-          link: "/jurnal",
-          branches: null,
-        },
-        {
-          label: "publikasi berita",
-          link: "/berita",
-          branches: null,
-        },
-        {
-          label: "publikasi opini",
-          link: "/opini",
-          branches: null,
-        },
-      ],
+      link: "/publicationn",
+      tree: null
     },
-    // ,
-    // {
-
-    //   label: "administrasi",
-    //   link: null,
-    //   tree: [
-    //     {
-    //       label: "surat",
-    //       link: "/surat",
-    //       branches: null,
-    //     },
-    //   ],
-    // },
   ],
 };
 export default Nav;

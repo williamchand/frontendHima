@@ -81,6 +81,31 @@ const Header = () => {
               <SLogo src={Logo} />
             </SLogoLink>
           </Sleft>
+          <form onSubmit={search}>
+            <div className="field has-addons has-background-light" style={{ borderRadius:'10px', width:'210px'}}>
+              <div className="control">
+                <input
+                  className="input"
+                  type="text"
+                  placeholder="Cari Disini ..."
+                  style={{ width: "100%",marginLeft: "5px", border: 'none',background:'none',boxShadow:'none'}}
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                />
+              </div>
+              <div className="control">
+                <button
+                  className="button"
+                  type="submit"
+                  onClick={() => handleModal()}
+                  style={{border:'none',background:'none'}}
+                  disabed
+                >
+                  <FaSearch />
+                </button>
+              </div>
+            </div>
+          </form>
           <SCenter>
             <SCTAButton>
               <Nav />
@@ -89,7 +114,7 @@ const Header = () => {
               {!menuOpen ? <SMenuIcon /> : <SCloseIcon />}
             </SMenuToggleButton>
           </SCenter>
-          <SRight>
+          {/* <SRight>
             <div
               className={`dropdown ${collapsed ? "" : "is-active is-right"}`}
               onBlur={() => handleToggle()}
@@ -111,37 +136,15 @@ const Header = () => {
                   }}
                 >
                   <div className="dropdown-item">
-                    <form onSubmit={search}>
-                      <div className="field has-addons">
-                        <div className="control">
-                          <input
-                            className="input"
-                            type="text"
-                            placeholder="Cari Disini ..."
-                            style={{ width: "300px" }}
-                            value={query}
-                            onChange={(e) => setQuery(e.target.value)}
-                          />
-                        </div>
-                        <div className="control">
-                          <button
-                            className="button"
-                            type="submit"
-                            onClick={() => handleModal()}
-                          >
-                            <FaSearch />
-                          </button>
-                        </div>
-                      </div>
-                    </form>
+                    
                   </div>
                 </div>
               </div>
             </div>
-          </SRight>
+          </SRight> */}
         </SHeader>
       </SHeaderFixed>
-      <SMenu style={menuOpen ? { left: 0, zIndex: 1 } : {}}>
+      <SMenu style={menuOpen ? { left: 0, zIndex: 999 } : {}}>
         <Nav menuToggleHandler={menuToggleHandler} />
       </SMenu>
       <div
@@ -149,7 +152,7 @@ const Header = () => {
         onClick={() => handleModal()}
       >
         <div className="modal-background"></div>
-        <div className="modal-card">
+        <div className="modal-card" >
           <header className="modal-card-head">
             <p className="modal-card-title">Hasil Pencarian ...</p>
             <button className="delete" aria-label="close"></button>

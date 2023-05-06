@@ -4,8 +4,11 @@ import { IoIosArrowDown } from "react-icons/io";
 import { v, b, a } from "../../../../../styles/variables";
 
 export const SNav = styled.nav`
-  width: 100%;
-  padding: ${v.mdSpacing};
+  // width: 100%;
+  max-width: 210px;
+  overflow-x: hidden;
+  height:100%;
+  // padding: ${v.mdSpacing};
   // background: ${({ theme }) => theme.bg};
   border-radius: ${v.borderRadius};
   z-index: 999;
@@ -21,9 +24,9 @@ export const SNav = styled.nav`
 export const SNavLinkContainer = styled.div`
   user-select: none;
   // position: relative;
-  margin-left: 10px;
-  margin-top:30px;
-  width: 100%;
+  // margin-left: 10px;
+  margin-top:15px;
+  // width: 100%;
   justify-content: space-between;
 
   :not(:last-of-type) {
@@ -43,9 +46,9 @@ export const SNavLinkContainer = styled.div`
 export const SNavLink = styled(Link)`
   text-decoration: none;
   color: inherit;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   :hover {
-    color: ${({ theme }) => theme.primary};
+    color: rgba(173,47,29,1)
   }
 `;
 

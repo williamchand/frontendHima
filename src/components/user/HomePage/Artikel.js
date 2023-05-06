@@ -71,7 +71,7 @@ const nyoba = [
 
   return (
     <>
-      <div className="columns">
+      <div className="columns" style={{zIndex:-999}}>
         {nyoba.slice(0,3).map((artikel) => {
           return (
             <Link

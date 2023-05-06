@@ -29,9 +29,10 @@ export const SHeaderFixed = styled.div`
   bottom:0;
   top: 0;
   height: 100%; 
+  // margin-left: 10px
   // height: ${v.headerHeight};
   // background: ${({ theme }) => theme.primary2};
-  z-index: 10;
+  z-index: 9999;
 `;
 
 export const SHeader = styled.header`
@@ -43,9 +44,8 @@ export const SHeader = styled.header`
   // align-items: center;
   // justify-content: center;
   transition: 0.3s ease padding;
-  padding: 0 ${v.mdSpacing};
-
-
+  // padding: 0 ${v.mdSpacing};
+  
   @media ${b.sm}{
     flex-direction: row;
   }
@@ -99,8 +99,8 @@ export const SLogo = styled.img`
 export const SCTAButton = styled.div`
   ${btnReset}
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  // align-items: center;
+  // justify-content: flex-end;
   @media ${a.md} {
     display: none;
   }

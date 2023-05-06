@@ -6,7 +6,9 @@ const Sejarah = () => {
     return (
         <>
             <Layout>
-                <SejarahOrganisasi />
+                <div className="p-6">
+                    <SejarahOrganisasi />
+                </div>
             </Layout>
         </>
     )
