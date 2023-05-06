@@ -1,21 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { uiActions } from "../../../../app/slices/uiSlice";
-import {
-  SCenter,
-  SCloseIcon,
-  SCTAButton,
-  SHeader,
-  SHeaderFixed,
-  SHeaderHeight,
-  Sleft,
-  SLogo,
-  SLogoLink,
-  SMenu,
-  SMenuIcon,
-  SMenuToggleButton,
-  SRight,
-} from "./styles";
+import { AiFillCloseCircle } from 'react-icons/ai';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import styled from "styled-components";
+
 import Logo from "../../../../images/logoHimaPersis.png";
 import Nav from "./Nav/Nav";
 import { FaSearch } from "react-icons/fa";
@@ -71,102 +60,117 @@ const Header = () => {
     setQuery("");
   };
 
+
+const Sidebar = styled.div`
+  position: fixed;
+  left: 0px;
+  width: 250px;
+  height: 100%;
+  background: #042331;
+  transition: all .5s ease;
+
+  header {
+    font-size: 22px;
+    color: white;
+    line-height: 70px;
+    text-align: center;
+    background: #063146;
+    user-select: none;
+  }
+
+  ul a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 65px;
+    font-size: 20px;
+    color: white;
+    padding-left: 40px;
+    box-sizing: border-box;
+    border-bottom: 1px solid black;
+    border-top: 1px solid rgba(255,255,255,.1);
+    transition: .4s;
+
+    i {
+      margin-right: 16px;
+    }
+  }
+
+  ul li:hover a {
+    padding-left: 50px;
+  }
+`;
+
+const Check = styled.input.attrs({type: 'checkbox', id: 'check'})`
+  display: none;
+
+  &:checked ~ ${Sidebar} {
+    left: -250px;
+  }
+
+  &:checked ~ label #btn {
+    left: 40px;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  &:checked ~ label #cancel {
+    left: -195px;
+  }
+
+  &:checked ~ section {
+    margin-left: 0px;
+  }
+`;
+
+const LabelBtn = styled.label.attrs({htmlFor: 'check'})`
+  // position: relative;
+  background: #ffff;
+  border-radius: 3px;
+  cursor: pointer;
+
+  #btn {
+    left: 250px;
+    top: 25px;
+    font-size: 35px;
+    color: white;
+    padding: 6px 12px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .5s;
+  }
+
+  #cancel {
+    z-index: 1111;
+    left: 195px;
+    top: 17px;
+    font-size: 30px;
+    color: #0a5275;
+    padding: 4px 9px;
+    transition: all .5s ease;
+  }
+`;
+
   return (
-    <>
-      {/* <SHeaderHeight /> */}
-      <SHeaderFixed>
-        <SHeader>
-          <Sleft>
-            <SLogoLink to="/" onClick={menuCloseHandler}>
-              <SLogo src={Logo} />
-            </SLogoLink>
-          </Sleft>
-          <form onSubmit={search}>
-            <div className="field has-addons has-background-light" style={{ borderRadius:'10px', width:'210px'}}>
-              <div className="control">
-                <input
-                  className="input"
-                  type="text"
-                  placeholder="Cari Disini ..."
-                  style={{ width: "100%",marginLeft: "5px", border: 'none',background:'none',boxShadow:'none'}}
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                />
-              </div>
-              <div className="control">
-                <button
-                  className="button"
-                  type="submit"
-                  onClick={() => handleModal()}
-                  style={{border:'none',background:'none'}}
-                  disabed
-                >
-                  <FaSearch />
-                </button>
-              </div>
-            </div>
-          </form>
-          <SCenter>
-            <SCTAButton>
-              <Nav />
-            </SCTAButton>
-            <SMenuToggleButton onClick={menuToggleHandler}>
-              {!menuOpen ? <SMenuIcon /> : <SCloseIcon />}
-            </SMenuToggleButton>
-          </SCenter>
-          {/* <SRight>
-            <div
-              className={`dropdown ${collapsed ? "" : "is-active is-right"}`}
-              onBlur={() => handleToggle()}
-            >
-              <div className="dropdown-trigger">
-                <FaSearch
-                  className="icon is-normal"
-                  aria-haspopup="true"
-                  aria-controls="dropdown-menu4"
-                  onClick={() => handleToggle()}
-                />
-              </div>
-              <div className="dropdown-menu" id="dropdown-menu4" role="menu">
-                <div
-                  className="dropdown-content"
-                  style={{
-                    marginTop: "13px",
-                    width: "100%",
-                  }}
-                >
-                  <div className="dropdown-item">
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </SRight> */}
-        </SHeader>
-      </SHeaderFixed>
-      <SMenu style={menuOpen ? { left: 0, zIndex: 999 } : {}}>
-        <Nav menuToggleHandler={menuToggleHandler} />
-      </SMenu>
-      <div
-        className={`modal ${modal ? "" : "is-active"}`}
-        onClick={() => handleModal()}
-      >
-        <div className="modal-background"></div>
-        <div className="modal-card" >
-          <header className="modal-card-head">
-            <p className="modal-card-title">Hasil Pencarian ...</p>
-            <button className="delete" aria-label="close"></button>
-          </header>
-          <section className="modal-card-body">
-            {msg ? (
-              <h1 className="notification is-danger is-light">{msg}</h1>
-            ) : (
-              <Artikel data={artikel} />
-            )}
-          </section>
-        </div>
-      </div>
-    </>
+    <div>
+      <Check/>
+      <LabelBtn>
+        <i id="btn"> <AiFillCloseCircle/> </i>
+        <i id="cancel"> <GiHamburgerMenu/> </i>
+      </LabelBtn>
+      <Sidebar>
+        <header>My App</header>
+        <ul>
+          <li><a href="#"><i class="fas fa-qrcode"></i>Dashboard</a></li>
+          <li><a href="#"><i class="fas fa-link"></i>Shortcuts</a></li>
+          <li><a href="#"><i class="fas fa-stream"></i>Overview</a></li>
+          <li><a href="#"><i class="fas fa-calendar-week"></i>Events</a></li>
+          <li><a href="#"><i class="far fa-question-circle"></i>About</a></li>
+          <li><a href="#"><i class="fas fa-sliders-h"></i>Services</a></li>
+          <li><a href="#"><i class="far fa-envelope"></i>Contact</a></li>
+        </ul>
+      </Sidebar>
+    </div>
   );
 };
 

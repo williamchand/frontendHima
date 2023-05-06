@@ -1,0 +1,210 @@
+/* :root{
+    --header-height: 3rem;
+    --nav-width: 68px;
+
+    --first-color: #f10086;
+    --first-color-alt: #f582a7;
+    --white-color: #ffddee;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+main{
+    position: relative;
+    margin: var(--header-height) 0 0 0;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.5s;    
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: var(--header-height);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--white-color);
+    padding: 0 1rem;
+    transition: 0.5s;
+}
+
+.header-toggle{
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--first-color);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -30%;
+    height: 100vh;
+    width: var(--nav-width);
+    background-color: var(--first-color);
+    padding-top: 1rem;
+    transition: 0.5s;
+  }
+  
+  .nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 100%;
+  }
+
+.nav-logo,
+.nav-link{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    column-gap: 2rem;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+}
+
+.nav-logo{
+    margin-bottom: 2rem;
+}
+
+.nav-logo-icon{
+    font-size: 1.25rem;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+.nav-logo-name{
+    font-weight: 700;
+    color: var(--white-color);
+}
+
+.nav-link{
+    color:var(--first-color-alt);
+    transition: 0.5s;
+    margin-bottom: 1.5rem;
+}
+
+.nav-link:hover{
+    color: var(--white-color);
+    background-color: rgba(0, 0, 0, 0.1);
+    
+} */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500');
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+}
+.sidebar {
+  position: fixed;
+  left: 0px;
+  width: 250px;
+  height: 100%;
+  background: #042331;
+  transition: all .5s ease;
+}
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: #063146;
+  user-select: none;
+}
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  transition: .4s;
+}
+
+ul li:hover a{
+  padding-left: 50px;
+}
+.sidebar ul a i{
+  margin-right: 16px;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  /* position: absolute; */
+  /* background: #042331; */
+  /* border-radius: 3px; */
+  cursor: pointer;
+}
+label #btn{
+  /* left: 100px; */
+  top: 25px;
+  width: 150%;
+  /* font-size: 5px; */
+  /* color: white; */
+  color: #0a5275;
+  /* padding: 6px 12px; */
+  opacity: 0;
+  pointer-events: none;
+  transition: all .5s;
+}
+label #cancel{
+  z-index: 1111;
+  left: 10px;
+  /* background-color: aqua; */
+  margin-left: -55px;
+  /* top: 17px; */
+  margin-top: 10px;
+  font-size: 30px;
+  border-radius: 10px;
+  color: #0a5275;
+  padding: 20px 10px 0px 40px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: -250px;
+}
+#check:checked ~ label #btn{
+  left: 40px;
+  opacity: 1;
+  pointer-events: auto;
+}
+#check:checked ~ label #cancel{
+  left: 205px;
+}
+#check:checked ~ section{
+  margin-left: 0px;
+  
+}
+section{
+  /* background: url(bg.jpeg) no-repeat; */
+  /* background-position: center;
+  background-size: cover; */
+  /* height: 100vh; */
+  overflow-y: auto;
+  transition: all .5s;
+  margin-left: 270px;
+}
