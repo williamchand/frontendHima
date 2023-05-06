@@ -13,6 +13,8 @@ import Sejarah from "../pages/user/Sejarah";
 import FotoAlbum from "../pages/user/Gallery/FotoAlbum";
 import VideoAlbum from "../pages/user/Gallery/VideoAlbum";
 import DOpini from "../pages/user/Publikasi/DOpini";
+import Foto from "../components/user/HomePage/foto"
+import Publication from "../components/user/HomePage/publicationCollection";
 
 export const routes = [
   {
@@ -74,6 +76,18 @@ export const routes = [
   {
     path: "/opini/:id/:judul",
     component: DOpini,
+  },
+  {
+    path: "/fotoo",
+    component: Foto
+  },
+  {
+    path: "/publicationn",
+    component: Publication
+  },
+  {
+    path: "/inpografis",
+    component: Publication
   },
   //   ,
   //   {

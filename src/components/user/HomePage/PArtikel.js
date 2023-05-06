@@ -19,28 +19,25 @@ const PArtikel = () => {
   };
   
   return (
-    <div className="hero is-fullwidth">
-      <div className="hero-body">
-        <div className="container">
-          <div
-            className="has-text-left"
-            style={{ borderLeft: "6px solid red" }}
-          >
-            <p className="is-size-6 pl-2 has-text-weight-bold">
-              Berita Terbaru
-            </p>
-          </div>
-          <div className="columns">
-            <div className="column">
-              <Route path={`${path}/:id/:judul`}>
-                <DetailArtikel />
-              </Route>
-              <Artikel data={artikels} />
-            </div>
-          </div>
-        </div>
+    <div>
+    <div
+      className="has-text-left mt-6"
+      style={{ borderLeft: "6px solid red" }}
+    >
+      <p className="is-size-6 pl-2 has-text-weight-bold">
+        Berita Terbaru
+      </p>
+    </div>
+    <hr/>
+    <div className="columns">
+      <div className="column">
+        <Route path={`${path}/:id/:judul`}>
+          <DetailArtikel />
+        </Route>
+        <Artikel data={artikels} />
       </div>
     </div>
+  </div>
   );
 };
 

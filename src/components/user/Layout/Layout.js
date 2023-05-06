@@ -7,12 +7,13 @@ const Layout = ({ children }) => {
   return (
     <>
       <div className="columns" style={{
-        height:'100vh',
+        // height:'100vh',
         // width:'200vh'
       }}>
         <div className="column is-one-quarter" style={{}}>
           <div className="box sidebar" style={{
-            // position:'fixed',
+            position:'fixed',
+            width:'350px',
             top:0,
             bottom:0
             // width:'300px'
@@ -21,7 +22,7 @@ const Layout = ({ children }) => {
           </div>
         </div>  
         <div className="column" style={{
-          overflow:'auto'
+          overflowY:'scroll'
         }}>
           <div className="">{children}</div>
           <Footer/>

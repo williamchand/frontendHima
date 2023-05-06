@@ -15,24 +15,6 @@ const Infografis = () => {
     setInfografiss(response.data);
   };
 
-  const coba = [
-    { 
-      id: 1,
-      url: "https://server.himapersis.id/infografis/07f7598f319985ed344a4db094689446.jpeg"
-    },
-    {
-      id: 2,
-      url: "https://server.himapersis.id/infografis/cac7ce24b24166be4ed190d76de55974.jpeg"
-    },
-    {
-      id: 2,
-      url: "https://server.himapersis.id/infografis/cac7ce24b24166be4ed190d76de55974.jpeg"
-    },
-    {
-      id: 2,
-      url: "https://server.himapersis.id/infografis/cac7ce24b24166be4ed190d76de55974.jpeg"
-    },
-  ]
 
   return (
     <div className="container">
@@ -41,7 +23,7 @@ const Infografis = () => {
         <h6 className="is-size-7">Himpunan Mahasiswa Persatuan Islam</h6>
       </div>
       <div className="columns is-desktop is-multiline m-5">
-        {coba.map((infografis) => (
+        {infografiss.map((infografis) => (
           <div className="column is-one-quarter" key={infografis.id}>
             <div className="card">
               <div className="card-image">

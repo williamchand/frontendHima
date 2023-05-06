@@ -3,6 +3,7 @@ import { Link, Route, useRouteMatch } from "react-router-dom";
 import DetailArtikel from "../ELibraryPage/DetailArtikel";
 import { AiOutlineArrowRight } from "react-icons/ai";
 import moment from "moment/moment";
+import styled from "styled-components";
 
 export default function Artikel(props) {
   let { path } = useRouteMatch();
@@ -60,9 +61,17 @@ const nyoba = [
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
     }
   ]
+
+  const MyElement = styled.div`
+    transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.04);
+  }
+`;
+
   return (
     <>
-      <div className="m-1 columns is-6">
+      <div className="columns">
         {nyoba.slice(0,3).map((artikel) => {
           return (
             <Link
@@ -70,31 +79,7 @@ const nyoba = [
               key={artikel.id}
               to={`berita/${artikel.id}/${artikel.judul.replaceAll(" ", "-")}`}
             >
-              <hr />
-              {/* <article className="media box">
-                <div className="media-content">
-                  <div className="field">
-                    <p className="has-text-left">
-                      <strong className="is-size-7-mobile">
-                        {artikel.judul}
-                      </strong>
-                      <br />
-                      <small className="is-size-7-mobile">
-                        {moment(artikel.createdAt).format("D MMMM YYYY")}
-                      </small>
-                    </p>
-                  </div>
-                </div>
-                <figure className="media-right">
-                  <img
-                    src={artikel.url}
-                    className="image is-96x96"
-                    style={{
-                      borderRadius: "10%",
-                    }}
-                  />
-                </figure>
-              </article> */}
+              <MyElement>
               <div class="column card">
                 <div class="card-image">
                   <figure class="image is-4by3">
@@ -102,35 +87,38 @@ const nyoba = [
                   </figure>
                 </div>
                 <div class="card-content">
+                <div className="is-size-7 mb-3">{moment(artikel.createdAt).format("D MMMM YYYY")}</div>
                   <div class="media">
                     <div class="media-content">
                       <p class="title is-4">{
-                        (artikel.judul.length > 24) ?
-                          `${artikel.judul.slice(0,25)}...` :
+                        (artikel.judul.length > 20) ?
+                          `${artikel.judul.slice(0,20)}...` :
                           artikel.judul
                       }</p>
                     </div>
                   </div>
 
-                  <div class="content">
+                  <div class="content ">
                     {
-                      (artikel.description.length > 120) ?
-                      `${artikel.description.slice(0,120)}...` :
+                      (artikel.description.length > 190) ?
+                      `${artikel.description.slice(0,190)}...` :
                       artikel.description
                     }
-                    <br/>
-                    <time>{moment(artikel.createdAt).format("D MMMM YYYY")}</time>
                   </div>
                 </div>
               </div>
+              </MyElement>
             </Link>
           );
         })}
       </div>
-      <div className="is-flex is-align-items-center is-justify-content-center mt-6">
+      <div className="is-flex is-align-items-start mt-6">
         <Link
           to={"/berita"}
-          className="button is-normal is-rounded is-info is-centered"
+          className="button is-normal is-black is-centered"
+          style={{
+            borderRadius:'0px'
+          }}
         >
           lihat Lebih banyak
           <br />

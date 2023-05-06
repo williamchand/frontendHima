@@ -18,7 +18,8 @@ const SliderPage = () => {
   }, []);
 
   const getData = async () => {
-    const res = await axios.get(API_URL + "/artikel");
+    // const res = await axios.get(API_URL + "/artikel");
+    const res = await axios.get('https://server.himapersis.id/artikel/');
     setDataSlider(res.data);
     console.log(res.data);
   };
@@ -59,53 +60,64 @@ const SliderPage = () => {
 
   const nyoba = [
     {
+      id:1,
       url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
       judul: "ajay"
     },
     {
-      url: "https://sinkap.info/wp-content/uploads/2022/04/82684877-b25f-4f47-8f98-b003a68c82da.jpg",
+      id:1,
+      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
       judul: "ajay"
     },
     {
-      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      id:1,
+      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
       judul: "ajay"
     },
     {
-      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      id:1,
+      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
       judul: "ajay"
     },
     {
-      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      id:1,
+      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
       judul: "ajay"
     },
     {
-      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      id:1,
+      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
       judul: "ajay"
     },
     {
-      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      id:1,
+      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
       judul: "ajay"
     },
     {
-      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      id:1,
+      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
       judul: "ajay"
     },
     {
-      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      id:1,
+      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
       judul: "ajay"
     },
     {
-      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      id:1,
+      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
       judul: "ajay"
     },
     {
-      url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
+      id:1,
+      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
       judul: "ajay"
     }
   ]
   return (
     <>
-      <div className="container-slider">
+      <div className="container-slider" style={{borderRadius:'20px'}}>
         {nyoba.map((obj, index) => {
           return (
             <div
@@ -115,21 +127,21 @@ const SliderPage = () => {
               }
             >
               <img src={obj.url} alt="slideimage" />
-              <div className="slide-content">
-                {/* <Link
+              {/* <div className="slide-content">
+                <Link
                   to={`berita/${dataSlider[slideIndex - 1].id}/${dataSlider[slideIndex - 1].judul
                     }`}
                 >
                   <h1>{obj.judul}</h1>
-                </Link> */}
-              </div>
+                </Link>
+              </div> */}
             </div>
           );
         })}
         <BtnSlide moveSlide={nextSlide} direction={"next"} />
         <BtnSlide moveSlide={prevSlide} direction={"prev"} />
       </div>
-      <div className="container is-fullwidth is-flex overflowX">
+      {/* <div className="container is-fullwidth is-flex overflowX">
         <div className="is-flex">
           {dataSlider.map((item, index) => (
             <div
@@ -144,7 +156,7 @@ const SliderPage = () => {
             ></div>
           ))}
         </div>
-      </div>
+      </div> */}
     </>
   );
 };
