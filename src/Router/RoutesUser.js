@@ -14,7 +14,9 @@ import FotoAlbum from "../pages/user/Gallery/FotoAlbum";
 import VideoAlbum from "../pages/user/Gallery/VideoAlbum";
 import DOpini from "../pages/user/Publikasi/DOpini";
 import Foto from "../components/user/HomePage/foto"
-import Publication from "../components/user/HomePage/publicationCollection";
+// import Publication from "../components/user/HomePage/publicationCollection";
+import PublikasiPage from "../pages/user/Publikasi/PublikasiPage";
+import Infografis from "../components/user/GalleryPage/Infografis";
 
 export const routes = [
   {
@@ -83,11 +85,11 @@ export const routes = [
   },
   {
     path: "/publicationn",
-    component: Publication
+    component: PublikasiPage
   },
   {
     path: "/inpografis",
-    component: Publication
+    component: Infografis
   },
   //   ,
   //   {

@@ -117,7 +117,7 @@ const SliderPage = () => {
   ]
   return (
     <>
-      <div className="container-slider" style={{borderRadius:'20px'}}>
+      <div className="container-slider">
         {nyoba.map((obj, index) => {
           return (
             <div
