@@ -27,7 +27,7 @@ const Inpografis = () => {
             style={{ borderLeft: "6px solid red" }}
             >
                 <p className="is-size-6 pl-2 has-text-weight-bold">
-                    Foto
+                    Infografis
                 </p>
             </div>
             <hr/>

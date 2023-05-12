@@ -34,12 +34,35 @@ body {
   height: 100%;
   width: 100%;
   line-height: 45px;
-  /* font-size: 20px; */
-  color: black;
+  font-size: 16px;
+  color: #1c1c1c;
   /* text-decoration: none; */
   padding-left: 30px;
   box-sizing: border-box;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
   transition: .4s;
+}
+
+.sidebar ul button{
+  display: block;
+  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  font-size: 17px;
+  color: #1c1c1c;
+  box-sizing: border-box;
+  line-height: 45px;
+  margin-left: 30px;
+  transition: .4s;
+}
+
+.sidebar ul button:hover{
+  color:red
+}
+
+ul li:hover button{
+  padding-left: 8px;
 }
 
 .sidebar ul a:hover{
@@ -98,6 +121,11 @@ label #cancel{
   label #cancel{
     display: block;
   }
+
+  section {
+    /* margin-right: 1000px; */
+    width: 100%;
+  }
 }
 
 label #cancel:hover{
@@ -119,14 +147,14 @@ label #cancel:hover{
 }
 #check:checked ~ section{
   margin-left: 0px;
-  /* width: 100vh; */
 }
 section{
+/* width: 100%; */
   /* background: url(bg.jpeg) no-repeat; */
   /* background-position: center;
   background-size: cover; */
   /* height: 100vh; */
-  /* overflow-y: auto; */
+  /* overflow-x: auto; */
   transition: all .5s;
   margin-left: 250px;
 }

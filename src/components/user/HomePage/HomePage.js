@@ -3,15 +3,10 @@ import SliderPage from "./SliderPage/SliderPage";
 import HelpdeskPage from "../HelpdeskPage/HelpdeskPage";
 import Artikel from "./PArtikel";
 import SejarahOrganisasi from '../HomePage/SejarahOrganisasi/SejarahOrganisasi'
-import Publikasi from "../Publikasi";
-import Galeri from "../Galeri";
 import Foto from "../HomePage/foto"
-import Infografis from "../GalleryPage/Infografis"
-import Jurnal from "../ELibraryPage/PublikasiJurnal"
-import Buku from "../ELibraryPage/PublikasiBuku"
-import Opini from "../ELibraryPage/PublikasiOpini"
 import Publication from "./publicationCollection";
 import Inpografis from "./inpografis";
+import Youtube from "./youtube";
 
 const photo = [
   {
@@ -32,15 +27,22 @@ const photo = [
   }
 ]
 
-const HomePage = () => {
+const HomePage = ({sejarah,beranda,foto,infografis,video,publikasi}) => {
   return (
     <>
     <div className="px-6">
+      <span ref={beranda}></span>
       <SliderPage />
       <Artikel />
+      <span ref={sejarah}></span>
       <SejarahOrganisasi/>
+      <span ref={foto}></span>
       <Foto photo={photo}/>
+      <span ref={video}></span>
+      <Youtube/>
+      <span ref={infografis}></span>
       <Inpografis/>
+      <span ref={publikasi}></span>
       <Publication/>
       <HelpdeskPage />
     </div>

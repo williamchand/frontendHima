@@ -1,12 +1,8 @@
-import React, {useState,useEffect} from "react";
+import React, {useState,useEffect,useRef} from "react";
 import Footer from "./Footer/Footer";
-// import Header from "./Header/Header";
-// import Sidebar from "./Sidebar";
-// import { SPage } from "./styles";
 import { HiDotsVertical } from 'react-icons/hi';
 import { BiSearchAlt } from 'react-icons/bi';
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import styled from "styled-components";
 import Logo from '../../../images/logoHimaPersis.png';
 import "./styles.css"
 import axios from "axios";
@@ -14,12 +10,40 @@ import { API_URL } from "../../../utils";
 import Artikel from '../HomePage/PArtikel'
 
 const Layout = ({ children }) => {
+  const path = window.location.pathname;
+
+  const beranda = useRef(null);
+  const sejarah = useRef(null);
+  const foto = useRef(null);
+  const video = useRef(null);
+  const infografis = useRef(null);
+  const publikasi = useRef(null);
+
   const [collapsed, setCollapsed] = useState(true);
   const [modal, setModal] = useState(true);
   const [artikel, setArtikel] = useState([]);
   const [keyword, setKeyword] = useState("");
   const [query, setQuery] = useState("");
   const [msg, setMsg] = useState("");
+
+  const scrollToRef = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  }
+
+  const childrenWithRefs = React.Children.map(children, child => {
+    if (React.isValidElement(child)) {
+      return React.cloneElement(child, {
+        beranda,
+        infografis,
+        sejarah,
+        foto,
+        video,
+        publikasi,
+        scrollToRef
+      });
+    }
+    return child;
+  });
 
   const getArtikel = async () => {
     try {
@@ -49,31 +73,37 @@ const Layout = ({ children }) => {
   const data = [
     {
       label: "beranda",
+      ref: beranda,
       link: "/",
       tree: null,
     },
     {
       label: "sejarah",
+      ref: sejarah,
       link: "/sejarah",
       tree: null,
     },
     {
       label: "foto",
+      ref: foto,
       link: "/foto",
       tree: null,
     },
     {
       label: "video",
+      ref: video,
       link: "/video",
       tree: null,
     },
     {
       label: "infografis",
+      ref: infografis,
       link: "/infografis",
       branches: null,
     },
     {
       label: "publikasi",
+      ref: publikasi,
       link: "/publicationn",
       tree: null
     }
@@ -114,9 +144,13 @@ const Layout = ({ children }) => {
       </div>
     <ul>
       {
-        data.map(({label,link,className},index)=>(
+        (path === '/') ?
+        data.map(({label,ref},index)=>(
+          <li><button style={{border:'none',background: 'none',cursor:'pointer'}} onClick={()=>{scrollToRef(ref)}}>{label[0].toUpperCase()+label.slice(1)}</button></li>
+        )):
+        data.map(({label,link},index)=>(
           <li><Link to={link}>{label[0].toUpperCase()+label.slice(1)}</Link></li>
-        ))
+        )) 
       }
     </ul>
       <Link to="/anggotabaru" className="button is-black is-flex mt-4 mx-auto" style={{borderRadius:'0px',width:'190px'}}>Gabung Hima</Link>
@@ -146,7 +180,8 @@ const Layout = ({ children }) => {
         </div>
         </div>
       </div>
-  {children}
+  {/* {children} */}
+  {childrenWithRefs}
   <Footer/>
  </section>
     </div>

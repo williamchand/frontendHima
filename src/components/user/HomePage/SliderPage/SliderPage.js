@@ -118,7 +118,7 @@ const SliderPage = () => {
   return (
     <>
       <div className="container-slider">
-        {nyoba.map((obj, index) => {
+        {dataSlider.map((obj, index) => {
           return (
             <div
               key={index}
@@ -127,21 +127,21 @@ const SliderPage = () => {
               }
             >
               <img src={obj.url} alt="slideimage" />
-              {/* <div className="slide-content">
+              <div className="slide-content">
                 <Link
                   to={`berita/${dataSlider[slideIndex - 1].id}/${dataSlider[slideIndex - 1].judul
                     }`}
                 >
                   <h1>{obj.judul}</h1>
                 </Link>
-              </div> */}
+              </div>
             </div>
           );
         })}
-        <BtnSlide moveSlide={nextSlide} direction={"next"} />
+        <BtnSlide moveSlide={nextSlide} direction={"next"} style={{zIndex: 1}} />
         <BtnSlide moveSlide={prevSlide} direction={"prev"} />
       </div>
-      {/* <div className="container is-fullwidth is-flex overflowX">
+      <div className="container is-fullwidth is-flex overflowX">
         <div className="is-flex">
           {dataSlider.map((item, index) => (
             <div
@@ -156,7 +156,7 @@ const SliderPage = () => {
             ></div>
           ))}
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

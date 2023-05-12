@@ -8,7 +8,7 @@ import Facebook from "../../../../images/circle-facebook_-512.webp";
 import Twitter from "../../../../images/free-twitter-logo-icon-2429-thumb.png";
 import Instagram from "../../../../images/instagram-1581266_640-transformed.png";
 
-const Footer = () => {
+const Footer = ({prop}) => {
   const ig = "instagram.com/pphimapersis.official";
   const fb = "www.facebook.com/himapersisID/";
   const yt = "youtube.com/channel/UCbPOziblvvcffpbO5z1uqVQ";
@@ -18,7 +18,7 @@ const Footer = () => {
   // const tiktok = '../../../../images/Social-media_Tiktok-512.webp';
   return (
     <>
-      <div>
+      <div ref={prop}>
         <div
           className="has-text-white"
           style={{ background: `rgba(173,47,29,0.6)` }}

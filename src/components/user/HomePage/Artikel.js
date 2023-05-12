@@ -27,7 +27,7 @@ export default function Artikel(props) {
 const nyoba = [
     {
       id: 1,
-      judul: "bagas",
+      judul: "",
       createdAt: "12-12-2022",
       url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
       description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
@@ -75,7 +75,7 @@ const nyoba = [
   return (
     <>
       <div className="columns" >
-        {nyoba.slice(0,3).map((artikel) => {
+        {currentItems.slice(0,3).map((artikel) => {
           return (
             <Link
               className="column"

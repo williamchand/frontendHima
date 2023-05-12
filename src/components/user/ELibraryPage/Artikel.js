@@ -24,11 +24,17 @@ export default function Artikel(props) {
 
   return (
     <>
-      <div className="columns is-1-mobile is-multiline mt-5 mb-5">
+      <div className="columns is-1-mobile is-multiline m-5">
         {currentItems.map((artikel) => {
           return (
             <div className="column is-one-quarter" key={artikel.id}>
               <div className="card">
+                    <Link
+                      to={`berita/${artikel.id}/${artikel.judul.replaceAll(
+                        " ",
+                        "-"
+                      )}`}
+                    >
                 <div className="card-image">
                   <figure className="image is-3by2">
                     <img
@@ -38,18 +44,16 @@ export default function Artikel(props) {
                     />
                   </figure>
                 </div>
-                <div className="card-header" style={{ height: "100px" }}>
-                  <Link
-                    to={`berita/${artikel.id}/${artikel.judul.replaceAll(
-                      " ",
-                      "-"
-                    )}`}
-                  >
-                    <p className="card-header-title has-text-left">
-                      <h6>{artikel.judul}</h6>
+                <div className="card-header is-flex is-justify-content-space-between" style={{ minHeight: "120px" }}>
+                    <p className="p-3 is-flex is-justify-content-space-between">
+                      {
+                        (artikel.judul.split(' ').length > 9)?
+                        <h6 className="has-text-black">{artikel.judul.split(' ').slice(0,9).join(' ')}...</h6>:
+                        <h6 className="has-text-black">{artikel.judul}</h6>
+                      }
                     </p>
-                  </Link>
                 </div>
+                  </Link>
               </div>
             </div>
           );

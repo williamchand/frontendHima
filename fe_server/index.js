@@ -7,8 +7,6 @@ require('dotenv').config()
 
 const app = express();
 
-
-
 const { getMeta } = require('./utils/PostMeta');
 
 axios.defaults.withCredentials = true;
@@ -21,6 +19,7 @@ app.use(express.static(
     path.resolve(__dirname, '..', 'build'),
     { maxAge: '30d' },
 ));
+
 
 // here we serve the index.html page
 app.get('/*', (req, res, next) => {
