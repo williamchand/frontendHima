@@ -8,7 +8,7 @@ import "video-react/dist/video-react.css";
 import "react-datepicker/dist/react-datepicker.css";
 import { hydrate, render } from "react-dom";
 import axios from "axios";
-axios.defaults.withCredentials = true;
+// axios.defaults.withCredentials = true;
 
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
