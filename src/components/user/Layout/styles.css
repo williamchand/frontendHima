@@ -135,6 +135,7 @@ label #cancel:hover{
 #check:checked ~ .sidebar{
   left: -250px;
 }
+
 #check:checked ~ label #btn{
   left: 0px;
   opacity: 1;

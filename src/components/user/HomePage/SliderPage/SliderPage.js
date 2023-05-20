@@ -19,7 +19,7 @@ const SliderPage = () => {
 
   const getData = async () => {
     // const res = await axios.get(API_URL + "/artikel");
-    const res = await axios.get('https://server.himapersis.id/artikel/');
+    const res = await axios.get("https://server.himapersis.id/artikel/");
     setDataSlider(res.data);
     console.log(res.data);
   };
@@ -58,63 +58,6 @@ const SliderPage = () => {
     setSlideIndex(index);
   };
 
-  const nyoba = [
-    {
-      id:1,
-      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
-      judul: "ajay"
-    },
-    {
-      id:1,
-      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
-      judul: "ajay"
-    },
-    {
-      id:1,
-      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
-      judul: "ajay"
-    },
-    {
-      id:1,
-      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
-      judul: "ajay"
-    },
-    {
-      id:1,
-      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
-      judul: "ajay"
-    },
-    {
-      id:1,
-      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
-      judul: "ajay"
-    },
-    {
-      id:1,
-      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
-      judul: "ajay"
-    },
-    {
-      id:1,
-      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
-      judul: "ajay"
-    },
-    {
-      id:1,
-      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
-      judul: "ajay"
-    },
-    {
-      id:1,
-      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
-      judul: "ajay"
-    },
-    {
-      id:1,
-      url: "https://kabarpriangan.com/konten/uploads/2018/11/img-20181111-wa00371581932550.jpg",
-      judul: "ajay"
-    }
-  ]
   return (
     <>
       <div className="container-slider">
@@ -129,8 +72,9 @@ const SliderPage = () => {
               <img src={obj.url} alt="slideimage" />
               <div className="slide-content">
                 <Link
-                  to={`berita/${dataSlider[slideIndex - 1].id}/${dataSlider[slideIndex - 1].judul
-                    }`}
+                  to={`berita/${dataSlider[slideIndex - 1].id}/${
+                    dataSlider[slideIndex - 1].judul
+                  }`}
                 >
                   <h1>{obj.judul}</h1>
                 </Link>
@@ -138,7 +82,11 @@ const SliderPage = () => {
             </div>
           );
         })}
-        <BtnSlide moveSlide={nextSlide} direction={"next"} style={{zIndex: 1}} />
+        <BtnSlide
+          moveSlide={nextSlide}
+          direction={"next"}
+          style={{ zIndex: 1 }}
+        />
         <BtnSlide moveSlide={prevSlide} direction={"prev"} />
       </div>
       <div className="container is-fullwidth is-flex overflowX">

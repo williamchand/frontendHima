@@ -24,58 +24,63 @@ export default function Artikel(props) {
     const newOffset = (event.selected * itemsPerPage) % data.length;
     setItemOffset(newOffset);
   };
-const nyoba = [
+  const nyoba = [
     {
       id: 1,
       judul: "",
       createdAt: "12-12-2022",
       url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris",
     },
     {
       id: 1,
       judul: "Persis Hima judul 2",
       createdAt: "12-12-2022",
       url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris",
     },
     {
       id: 1,
       judul: "Persis Hima judul 3",
       createdAt: "12-12-2022",
       url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris",
     },
     {
       id: 1,
       judul: "Persis Hima judul 4",
       createdAt: "12-12-2022",
       url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris",
     },
     {
       id: 1,
       judul: "Persis Hima judul 5",
       createdAt: "12-12-2022",
       url: "https://himapersisjakarta.org/wp-content/uploads/2022/12/Hima-Persis-DKI-Jakarta.jpg",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris"
-    }
-  ]
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis maurisLorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis maurishasellus nec iaculis maurishasellus nec iaculis mauris",
+    },
+  ];
 
   const MyElement = styled.div`
-  // position: relative;
-  z-index: 11;
+    // position: relative;
+    z-index: 11;
     transition: all 0.2s ease-in-out;
-  &:hover {
-    transform: scale(1.04);
-  z-index: 11;
-  }
-`;
+    &:hover {
+      transform: scale(1.04);
+      z-index: 11;
+    }
+  `;
 
   return (
     <>
-      <div className="columns" >
-        {currentItems.slice(0,3).map((artikel) => {
+      <div className="columns">
+        {currentItems.slice(0, 3).map((artikel) => {
           return (
             <Link
               className="column"
@@ -84,33 +89,37 @@ const nyoba = [
               to={`berita/${artikel.id}/${artikel.judul.replaceAll(" ", "-")}`}
             >
               <MyElement>
-              <div class="column card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src={artikel.url} alt="Placeholder image"/>
-                  </figure>
-                </div>
-                <div class="card-content">
-                <div className="is-size-7 mb-3">{moment(artikel.createdAt).format("D MMMM YYYY")}</div>
-                  <div class="media">
-                    <div class="media-content">
-                      <p class="title is-4">{
-                        (artikel.judul.length > 20) ?
-                          `${artikel.judul.slice(0,20)}...` :
-                          artikel.judul
-                      }</p>
+                <div class="column card">
+                  <div class="card-image">
+                    <figure class="image is-4by3">
+                      <img src={artikel.url} alt="Placeholder image" />
+                    </figure>
+                  </div>
+                  <div class="card-content">
+                    <div className="is-size-7 mb-3">
+                      {moment(artikel.createdAt).format("D MMMM YYYY")}
                     </div>
-                  </div>
+                    <div class="media">
+                      <div class="media-content">
+                        <p class="title is-4">
+                          {artikel.judul.length > 20
+                            ? `${artikel.judul.slice(0, 20)}...`
+                            : artikel.judul}
+                        </p>
+                      </div>
+                    </div>
 
-                  <div class="content ">
-                    {
-                      (artikel.description.length > 190) ?
-                      `${artikel.description.slice(0,190)}...` :
-                      artikel.description
-                    }
+                    <div
+                      class="content "
+                      dangerouslySetInnerHTML={{
+                        __html:
+                          artikel.description.length > 190
+                            ? `${artikel.description.slice(0, 190)}...`
+                            : artikel.description,
+                      }}
+                    ></div>
                   </div>
                 </div>
-              </div>
               </MyElement>
             </Link>
           );
@@ -121,7 +130,7 @@ const nyoba = [
           to={"/berita"}
           className="button is-normal is-black is-centered"
           style={{
-            borderRadius:'0px'
+            borderRadius: "0px",
           }}
         >
           lihat Lebih banyak
