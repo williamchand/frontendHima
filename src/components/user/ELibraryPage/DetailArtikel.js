@@ -52,24 +52,9 @@ const DetailArtikel = () => {
                   </figure>
                 </div>
                 <div
-                  className="content mt-2 is-size-5-mobile has-text-justified"
+                  className="content mt-2 is-size-6-mobile has-text-justified"
                   dangerouslySetInnerHTML={{ __html: isi }}
                 />
-                {/* <span className="icon mr-5">
-                    <FacebookShareButton url={shareUrl}>
-                      <FacebookIcon size={40} round={true} />
-                    </FacebookShareButton>
-                  </span>
-                  <span className="icon mr-5">
-                    <WhatsappShareButton url={shareUrl}>
-                      <WhatsappIcon size={40} round={true} />
-                    </WhatsappShareButton>
-                  </span> */}
-                {/* <span className="icon">
-                    <TelegramShareButton url={shareUrl}>
-                      <TelegramIcon size={40} round={true} />
-                    </TelegramShareButton>
-                  </span> */}
               </div>
             </div>
           </div>

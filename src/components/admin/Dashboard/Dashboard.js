@@ -54,8 +54,8 @@ const Dashboard = () => {
   );
 
   const getUsers = async () => {
-    const response = await axiosJWT.get(API_URL + "/users");
-    setUsers(response.data);
+    // const response = await axiosJWT.get(API_URL + "/users");
+    // setUsers(response.data);
   };
 
   const deleteUsers = async (userId) => {

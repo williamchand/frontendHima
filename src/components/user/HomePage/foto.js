@@ -11,8 +11,8 @@ const Foto = ({ photo }) => {
   `;
 
   const Card = styled.div`
-    //   width: 280px;
-    height: 360px;
+    // width: 280px;
+    height: 150px;
     border-radius: 15px;
     padding: 1.5rem;
     background: white;
@@ -111,12 +111,12 @@ const Foto = ({ photo }) => {
         {(photo || []).slice(0, 4).map((e) => {
           return (
             <div className="column">
-              <Wrapper>
-                <Card>
-                  <img src={e.url} />
-                  <div class="info" style={{ width: "170px" }}></div>
-                </Card>
-              </Wrapper>
+              {/* <Wrapper> */}
+              <Card>
+                <img src={e.url} />
+                <div class="info"></div>
+              </Card>
+              {/* </Wrapper> */}
             </div>
           );
         })}

@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
   const [keyword, setKeyword] = useState("");
   const [query, setQuery] = useState("");
   const [msg, setMsg] = useState("");
-
+  const [isHP, setIsHp] = useState(false);
   const scrollToRef = (ref) => {
     ref.current.scrollIntoView({ behavior: "smooth" });
   };
@@ -58,6 +58,10 @@ const Layout = ({ children }) => {
 
   useEffect(() => {
     getArtikel();
+    if (window.innerWidth < 700) {
+      setIsHp(true);
+    }
+    // setIsHp(false);
   }, [keyword]);
 
   const handleModal = () => {
@@ -75,12 +79,6 @@ const Layout = ({ children }) => {
       label: "beranda",
       ref: beranda,
       link: "/",
-      tree: null,
-    },
-    {
-      label: "sejarah",
-      ref: sejarah,
-      link: "/sejarah",
       tree: null,
     },
     {
@@ -107,11 +105,22 @@ const Layout = ({ children }) => {
       link: "/publicationn",
       tree: null,
     },
+    {
+      label: "sejarah",
+      ref: sejarah,
+      link: "/sejarah",
+      tree: null,
+    },
   ];
 
   return (
     <div>
-      <input type="checkbox" id="check" />
+      <input
+        type="checkbox"
+        id="check"
+        checked={isHP}
+        onChange={() => setIsHp(!isHP)}
+      />
       <div className="sidebar">
         <header>
           <img src={Logo}></img>

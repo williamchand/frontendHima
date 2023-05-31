@@ -76,7 +76,7 @@ const SliderPage = () => {
                     dataSlider[slideIndex - 1].judul
                   }`}
                 >
-                  <h1>{obj.judul}</h1>
+                  <h1 style={{ fontSize: "13px" }}>{obj.judul}</h1>
                 </Link>
               </div>
             </div>

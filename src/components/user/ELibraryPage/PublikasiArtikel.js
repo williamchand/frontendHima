@@ -5,7 +5,6 @@ import { Link, Route, useRouteMatch } from "react-router-dom";
 import DetailArtikel from "./DetailArtikel";
 import Artikel from "./Artikel";
 
-
 const PublikasiArtikel = () => {
   let { path } = useRouteMatch();
   const [artikels, setArtikels] = useState([]);
@@ -57,7 +56,7 @@ const PublikasiArtikel = () => {
         </Route>
         <Artikel data={artikels} />
       </div>
-    </div >
+    </div>
   );
 };
 
