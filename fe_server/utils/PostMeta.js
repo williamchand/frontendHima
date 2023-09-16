@@ -12,7 +12,25 @@ exports.getMeta = async function (urlstr) {
     let returnMeta = defaultMeta;
 
     //special treatement are artikel
-    if (url[1] === 'artikel' && url.length > 2 && url[2] !== "") {
+    if (url[1] === 'berita') {
+        console.log('artikel check run')
+        const resp = await axios.get(process.env.ENV_API_LOCAL + `/artikel`)
+        if (!resp.data) {
+            returnMeta.error = true;
+        }
+        returnMeta = {
+            title:  defaultMeta.description,
+            description:  defaultMeta.description,
+            image:defaultMeta.image,
+        }
+        if (resp.data[0].judul) {
+            returnMeta.title = resp.data[0].judul;
+            returnMeta.description = resp.data[0].judul;
+        }
+        if (resp.data[0].url)  {
+            returnMeta.image = resp.data[0].url;
+        }
+    } else if (url[1] === 'artikel' && url.length > 2 && url[2] !== "") {
         console.log('artikel check run')
         console.log(url[2])
         const resp = await axios.get(process.env.ENV_API_LOCAL + `/artikel/${url[2]}`)
