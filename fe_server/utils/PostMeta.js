@@ -30,9 +30,7 @@ exports.getMeta = async function (urlstr) {
         if (resp.data[0].url)  {
             returnMeta.image = resp.data[0].url;
         }
-    } else if (url[1] === 'artikel' && url.length > 2 && url[2] !== "") {
-        console.log('artikel check run')
-        console.log(url[2])
+    } else if (url[1] === 'berita' && url.length > 2 && url[2] !== "") {
         const resp = await axios.get(process.env.ENV_API_LOCAL + `/artikel/${url[2]}`)
         if (!resp.data) {
             returnMeta.error = true;
@@ -42,12 +40,12 @@ exports.getMeta = async function (urlstr) {
             description:  defaultMeta.description,
             image:defaultMeta.image,
         }
-        if (resp.data.judul) {
-            returnMeta.title = resp.data.judul;
-            returnMeta.description = resp.data.judul;
+        if (resp.judul) {
+            returnMeta.title = resp.judul;
+            returnMeta.description = resp.judul;
         }
-        if (resp.data.url)  {
-            returnMeta.image = resp.data.url;
+        if (resp.url)  {
+            returnMeta.image = resp.url;
         }
         // axios.get(process.env.ENV_API_LOCAL + `/artikel/${url[2]}`)
         //     .then(function (response) {

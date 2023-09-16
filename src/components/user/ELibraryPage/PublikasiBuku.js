@@ -30,9 +30,9 @@ const PublikasiBuku = () => {
       cover: "0ae902950317fe799b8895fd3360b7ee.jpeg",
       file: "6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
       urlCover:
-        "http://server.himapersis.id/buku/cover/0ae902950317fe799b8895fd3360b7ee.jpeg",
+        "http://api.server.himapersis.id/buku/cover/0ae902950317fe799b8895fd3360b7ee.jpeg",
       urlFile:
-        "http://server.himapersis.id/buku/file/6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
+        "http://api.server.himapersis.id/buku/file/6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
       createdAt: "2022-09-20T08:58:47.000Z",
       updatedAt: "2022-09-20T08:58:47.000Z",
     },
@@ -43,9 +43,9 @@ const PublikasiBuku = () => {
       cover: "0ae902950317fe799b8895fd3360b7ee.jpeg",
       file: "6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
       urlCover:
-        "http://server.himapersis.id/buku/cover/0ae902950317fe799b8895fd3360b7ee.jpeg",
+        "http://api.server.himapersis.id/buku/cover/0ae902950317fe799b8895fd3360b7ee.jpeg",
       urlFile:
-        "http://server.himapersis.id/buku/file/6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
+        "http://api.server.himapersis.id/buku/file/6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
       createdAt: "2022-09-20T08:58:47.000Z",
       updatedAt: "2022-09-20T08:58:47.000Z",
     },
@@ -56,9 +56,9 @@ const PublikasiBuku = () => {
       cover: "0ae902950317fe799b8895fd3360b7ee.jpeg",
       file: "6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
       urlCover:
-        "http://server.himapersis.id/buku/cover/0ae902950317fe799b8895fd3360b7ee.jpeg",
+        "http://api.server.himapersis.id/buku/cover/0ae902950317fe799b8895fd3360b7ee.jpeg",
       urlFile:
-        "http://server.himapersis.id/buku/file/6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
+        "http://api.server.himapersis.id/buku/file/6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
       createdAt: "2022-09-20T08:58:47.000Z",
       updatedAt: "2022-09-20T08:58:47.000Z",
     },
@@ -69,9 +69,9 @@ const PublikasiBuku = () => {
       cover: "0ae902950317fe799b8895fd3360b7ee.jpeg",
       file: "6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
       urlCover:
-        "http://server.himapersis.id/buku/cover/0ae902950317fe799b8895fd3360b7ee.jpeg",
+        "http://api.server.himapersis.id/buku/cover/0ae902950317fe799b8895fd3360b7ee.jpeg",
       urlFile:
-        "http://server.himapersis.id/buku/file/6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
+        "http://api.server.himapersis.id/buku/file/6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
       createdAt: "2022-09-20T08:58:47.000Z",
       updatedAt: "2022-09-20T08:58:47.000Z",
     },
@@ -82,9 +82,9 @@ const PublikasiBuku = () => {
       cover: "0ae902950317fe799b8895fd3360b7ee.jpeg",
       file: "6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
       urlCover:
-        "http://server.himapersis.id/buku/cover/0ae902950317fe799b8895fd3360b7ee.jpeg",
+        "http://api.server.himapersis.id/buku/cover/0ae902950317fe799b8895fd3360b7ee.jpeg",
       urlFile:
-        "http://server.himapersis.id/buku/file/6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
+        "http://api.server.himapersis.id/buku/file/6fc22cbfaf231eaa2eeddcd8c5d903c2.pdf",
       createdAt: "2022-09-20T08:58:47.000Z",
       updatedAt: "2022-09-20T08:58:47.000Z",
     },

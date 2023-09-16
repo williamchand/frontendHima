@@ -19,7 +19,7 @@ const SliderPage = () => {
 
   const getData = async () => {
     // const res = await axios.get(API_URL + "/artikel");
-    const res = await axios.get("https://server.himapersis.id/artikel/");
+    const res = await axios.get("https://api.server.himapersis.id/artikel/");
     setDataSlider(res.data);
     console.log(res.data);
   };

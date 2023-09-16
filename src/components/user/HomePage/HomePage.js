@@ -15,13 +15,13 @@ const HomePage = ({ sejarah, beranda, foto, infografis, video, publikasi }) => {
   const [youtube, setYoutube] = useState("");
 
   const getPhoto = async () => {
-    const photos = await axios.get("https://server.himapersis.id/foto");
+    const photos = await axios.get("https://api.server.himapersis.id/foto");
     setPhoto(photos.data);
   };
 
   const getInfografis = async () => {
     const infograph = await axios.get(
-      "https://server.himapersis.id/infografis"
+      "https://api.server.himapersis.id/infografis"
     );
     setInfograph(infograph.data);
   };
