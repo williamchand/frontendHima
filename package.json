@@ -1,6 +1,6 @@
 {
   "name": "hima-web",
-  "proxy": "https://server.himapersis.id",
+  "proxy": "https://api.server.himapersis.id",
   "private": true,
   "homepage": "http://himapersis.id",
   "main": "fe_server/index.js",
