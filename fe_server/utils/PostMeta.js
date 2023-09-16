@@ -51,7 +51,11 @@ exports.getMeta = async function (urlstr) {
         //     });
     } else {
         // do search on pages or return default
-        returnMeta = pages.filter(e => e.slug === url[1])[0] ?? defaultMeta
+        returnMeta = defaultMeta
+        const filteredPages = pages.filter(e => e.slug === url[1])[0]
+        if (filteredPages) {
+            returnMeta = filteredPages
+        }
     }
 
     // console.log(returnMeta)
