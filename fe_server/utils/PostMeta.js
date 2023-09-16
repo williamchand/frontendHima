@@ -20,9 +20,16 @@ exports.getMeta = async function (urlstr) {
             returnMeta.error = true;
         }
         returnMeta = {
-            title: resp.data.judul ?? defaultMeta.description,
-            description: resp.data.judul ?? defaultMeta.description,
-            image: resp.data.url ?? defaultMeta.image,
+            title:  defaultMeta.description,
+            description:  defaultMeta.description,
+            image:defaultMeta.image,
+        }
+        if (resp.data.judul) {
+            returnMeta.title = resp.data.judul;
+            returnMeta.description = resp.data.judul;
+        }
+        if (resp.data.url)  {
+            returnMeta.image = resp.data.url;
         }
         // axios.get(process.env.ENV_API_LOCAL + `/artikel/${url[2]}`)
         //     .then(function (response) {

@@ -12,11 +12,11 @@ const { getMeta } = require('./utils/PostMeta');
 axios.defaults.withCredentials = true;
 
 const PORT = process.env.PORT || 3000;
-const indexPath = path.resolve(__dirname, '..', 'build', 'index.html');
+const indexPath = path.resolve(__dirname, '..', 'public', 'index.html');
 
 // static resources should just be served as they are
 app.use(express.static(
-    path.resolve(__dirname, '..', 'build'),
+    path.resolve(__dirname, '..', 'public'),
     { maxAge: '30d' },
 ));
 
