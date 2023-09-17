@@ -3,6 +3,7 @@
   "proxy": "https://api.server.himapersis.id",
   "private": true,
   "homepage": "http://himapersis.id",
+  "main": "fe_server/index.js",
   "version": "0.1.0",
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^34.2.0",
